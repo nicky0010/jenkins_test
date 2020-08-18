@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('write file') {
             steps {
-                writeFile(file: "output.txt", text: "aaa")
+                writeFile(file: "output.txt", text: "${OUTPUT_TEXT}")
             }
         }
     }
