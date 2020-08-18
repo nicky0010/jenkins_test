@@ -5,7 +5,7 @@ pipeline {
     parameters {
         string(
             name: 'JenkinsJOB',
-            defaultValue: "",
+            defaultValue: "JenkinsJOB",
             description: 'Name of source project for copying of artifact(s).'
         )
     }
