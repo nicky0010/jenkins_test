@@ -9,7 +9,9 @@ pipeline {
         }
         stage('archive artifacts') {
             steps {
-                archiveArtifacts "${pwd()}@script/jenkinsfiles/nicky-artifact/envs/common.yml"
+                script {
+                    archiveArtifacts "${pwd()}@script/jenkinsfiles/nicky-artifact/envs/common.yml"
+                }
             }
         }
     }
