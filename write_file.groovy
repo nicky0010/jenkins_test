@@ -4,7 +4,7 @@ pipeline {
         stage('write file') {
             steps {
                 deleteDir()
-                writeFile(file: "${pwd()}@tmp/jenkinsfiles/nicky-artifact/envs/output.txt", text: "${OUTPUT_TEXT}")
+                writeFile(file: "${pwd()}@script/jenkinsfiles/nicky-artifact/envs/output.txt", text: "${OUTPUT_TEXT}")
                 echo "${pwd()}"
             }
         }
