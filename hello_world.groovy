@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('hello') {
             steps {
+                deleteDir()
                 echo 'hello world'
             }
         }
