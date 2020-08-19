@@ -5,7 +5,11 @@ pipeline {
             steps {
                 deleteDir()
                 writeFile(file: "${pwd()}@script/jenkinsfiles/nicky-artifact/envs/output.txt", text: "${OUTPUT_TEXT}")
-                echo "${pwd()}"
+            }
+        }
+        stage('archive artifacts') {
+            steps {
+                archiveArtifacts "${pwd()}@script/jenkinsfiles/nicky-artifact/envs/common.yml"
             }
         }
     }
