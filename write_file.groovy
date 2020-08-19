@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('write file') {
             steps {
-                writeFile(file: "output.txt", text: "${OUTPUT_TEXT}")
+                writeFile(file: "${pwd()}@tmp/jenkinsfiles/nicky-artifact/envs/output.txt", text: "${OUTPUT_TEXT}")
             }
         }
     }
