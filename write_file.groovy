@@ -5,6 +5,7 @@ pipeline {
             steps {
                 deleteDir()
                 writeFile(file: "${pwd()}@tmp/jenkinsfiles/nicky-artifact/envs/output.txt", text: "${OUTPUT_TEXT}")
+                echo "${pwd()}"
             }
         }
     }
