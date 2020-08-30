@@ -17,7 +17,7 @@ pipeline {
 					props = commonProperties.props
 					mavenSetting = "${props.mavenSettingXmlPath}"
 					function = load "jenkinsfiles/nicky-artifact/functions/function-artifact-promote-release.groovy"
-					function.execute('nicky0010', "master")
+					function.execute('sample', "master")
 				}
 			}
 		}
