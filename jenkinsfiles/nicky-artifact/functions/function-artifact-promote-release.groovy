@@ -6,7 +6,7 @@ def execute(appRepository, branchName, nexusSnapshotUrl, nexusReleaseUrls, nexus
                 dir("${appRepository}") {
                     git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}", credentialId: "${githubCredentialId}"])
                     downloadBasePath = "${pwd()}"
-                    promoteArtifact(promoteData, groupId:"${appGroupId}, appVersion:"${appVersion}", downloadBasePath:"${downloadBasePath}")
+                    promoteArtifact(promoteData, downloadBasePath:"${downloadBasePath}")
                 }
             }
         }
@@ -26,3 +26,5 @@ def promoteArtifact(promoteData, downloadBasePath){
 def String downloadArtifact(downloadBasePath) {
     File file = new File("${downloadBasePath}/aaaa.txt")
 }
+
+return this
