@@ -16,6 +16,7 @@ pipeline {
 					commonProperties = readYaml file: "jenkinsfiles/nicky-artifact/envs/common.yml"
 					props = commonProperties.props
 					mavenSetting = "${props.mavenSettingXmlPath}"
+					function = load "jenkinsfiles/nicky-artifact/functions/function-artifact-promote-release.groovy"
 				}
 			}
 		}
