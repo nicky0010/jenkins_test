@@ -7,7 +7,6 @@ def execute(appRepository, branchName) {
                     // git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}"])
                     downloadBasePath = "${pwd()}"
                     echo "${downloadBasePath}"
-                    File file = new File("${downloadBasePath}/aaaa.txt")
                     promoteArtifact(downloadBasePath:"${downloadBasePath}")
                 }
             }
@@ -22,6 +21,7 @@ def promoteArtifact(downloadBasePath){
 
 def String downloadArtifact(downloadBasePath) {
     File file = new File("${downloadBasePath}/aaaa.txt")
+    file.write 'Working with files the Groovy way is easy.\n'
 }
 
 return this
