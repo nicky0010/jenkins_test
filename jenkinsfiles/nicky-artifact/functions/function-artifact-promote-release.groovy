@@ -8,6 +8,7 @@ def execute(appRepository, branchName) {
                     downloadBasePath = "${pwd()}"
                     echo "${downloadBasePath}"
                     File file = new File("bbbb.txt")
+                    file.write 'Working with files the Groovy way is easy.\n'
                     promoteArtifact(downloadBasePath:"${downloadBasePath}")
                 }
             }
