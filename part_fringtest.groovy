@@ -1,3 +1,10 @@
+properties([
+	parameters([
+		string(name: 'frEdfBranch', defaultValue: 'support/v1.0', description: 'github target branch'),
+		string(name: 'frEdfUtilsBranch', defaultValue: 'support/v1.0', description: 'github target branch'),
+	])
+])
+
 pipeline {
 	agent any
 	stages {
