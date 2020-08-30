@@ -21,7 +21,7 @@ def promoteArtifact(downloadBasePath){
 
 def String downloadArtifact(downloadBasePath) {
     File file = new File("${downloadBasePath}/aaaa.txt")
-    file.createNewFile()
+    file.write 'Working with files the Groovy way is easy.\n'
 }
 
 return this
