@@ -1,12 +1,12 @@
-def execute(appRepository, branchName, nexusSnapshotUrl, nexusReleaseUrls, nexusReleaseCredentialId, githubCredentialId, mavenSetting) {
+def execute(appRepository, branchName) {
     pipeline {
         stage('Promote') {
             deleteDir()
             script {
                 dir("${appRepository}") {
-                    git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}", credentialId: "${githubCredentialId}"])
+                    git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}"])
                     downloadBasePath = "${pwd()}"
-                    promoteArtifact(promoteData, downloadBasePath:"${downloadBasePath}")
+                    promoteArtifact(downloadBasePath:"${downloadBasePath}")
                 }
             }
         }
@@ -14,13 +14,8 @@ def execute(appRepository, branchName, nexusSnapshotUrl, nexusReleaseUrls, nexus
     echo "Promote ${appRepository} finished."
 }
 
-def promoteArtifact(promoteData, downloadBasePath){
-    promoteData.each { p ->
-        stage("relese: ${p.artifactId}") {
+def promoteArtifact(downloadBasePath){
             def md5Before = downloadArtifact(downloadBasePath)
-        }
-
-    }
 }
 
 def String downloadArtifact(downloadBasePath) {
