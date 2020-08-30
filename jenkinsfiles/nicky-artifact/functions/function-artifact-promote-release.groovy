@@ -6,6 +6,7 @@ def execute(appRepository, branchName) {
                 dir("${appRepository}") {
                     // git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}"])
                     downloadBasePath = "${pwd()}"
+                    File file = new File("${downloadBasePath}/aaaa.txt")
                     promoteArtifact(downloadBasePath:"${downloadBasePath}")
                 }
             }
