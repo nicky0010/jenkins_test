@@ -10,6 +10,7 @@ pipeline {
 	stages {
 		stage('Publish') {
 			steps {
+				deleteDir()
 				script {
 					echo "${workspace}"
 					echo "${pwd()}"
