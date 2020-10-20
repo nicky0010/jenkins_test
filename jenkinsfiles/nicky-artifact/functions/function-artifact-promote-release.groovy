@@ -4,7 +4,7 @@ def execute(appRepository, branchName) {
             // deleteDir()
             script {
                 dir("${appRepository}") {
-                    // git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}"])
+                    git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}"])
                     downloadBasePath = "${pwd()}"
                     echo "${downloadBasePath}"
                     File file = new File("workspace/pipeline_test2/sample/bbbb.txt")
