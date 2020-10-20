@@ -1,7 +1,7 @@
 def execute(appRepository, branchName) {
     pipeline {
         stage('Promote') {
-            // deleteDir()
+            deleteDir()
             script {
                 dir("${appRepository}") {
                     git([url: "https://github.com/nicky0010/${appRepository}.git", branch: "${branchName}"])
