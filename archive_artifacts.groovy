@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('write file') {
             steps {
-                writeFile(file: fileName, text: "${OUTPUT_TEXT}")
+                writeFile(file: fileName, text: "AAA")
             }
         }
     }
