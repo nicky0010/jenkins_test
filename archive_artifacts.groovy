@@ -12,11 +12,5 @@ pipeline {
                 writeFile(file: fileName, text: "${OUTPUT_TEXT}")
             }
         }
-
-        stage('archive artifacts') {
-            steps {
-                archiveArtifacts fileName
-            }
-        }
     }
 }
