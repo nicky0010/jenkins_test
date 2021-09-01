@@ -8,8 +8,11 @@ pipeline {
 
     stages {
         stage('delete workspace') {
-            steps {
-                deleteDir()
+            deleteDir()
+            script {
+                dir("working-group") {
+                    git([url: "https://github.com/nicky0010/working-group.git", branch: "master", credentialsId: "30670cd3-7531-45cb-9974-716a0c49adf0"])
+                }
             }
         }
 
