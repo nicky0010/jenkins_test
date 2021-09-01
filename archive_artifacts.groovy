@@ -6,13 +6,13 @@ pipeline {
         fileName = "output.txt"
     }
 
-    stage('delete workspace') {
-        steps {
-            deleteDir()
-        }
-    }
-
     stages {
+        stage('delete workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
         stage('write file') {
             steps {
                 writeFile(file: fileName, text: "BBB")
