@@ -6,6 +6,12 @@ pipeline {
         fileName = "output.txt"
     }
 
+    stage('delete workspace') {
+        steps {
+            deleteDir()
+        }
+    }
+
     stages {
         stage('write file') {
             steps {
@@ -14,9 +20,9 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            cleanWs()
-        }
-    }
+//    post {
+//        success {
+//            cleanWs()
+//        }
+//    }
 }
