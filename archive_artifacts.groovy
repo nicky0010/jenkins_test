@@ -9,8 +9,14 @@ pipeline {
     stages {
         stage('write file') {
             steps {
-                writeFile(file: fileName, text: "AAA")
+                writeFile(file: fileName, text: "BBB")
             }
+        }
+    }
+
+    post {
+        success {
+            cleanWs()
         }
     }
 }
