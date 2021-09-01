@@ -26,9 +26,9 @@ pipeline {
         }
     }
 
-//    post {
-//        success {
-//            cleanWs()
-//        }
-//    }
+    post {
+        cleanup {
+            deleteDir()
+        }
+    }
 }
